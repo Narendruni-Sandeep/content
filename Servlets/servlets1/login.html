@@ -1,0 +1,42 @@
+<html>
+<title> Login Form</title>
+<h1> Login</h1>
+<script language="javascript">
+   function validate(){
+
+	var usr,pw;
+
+  try{
+	usr=document.loginform.username.value;
+	pwd=document.loginform.pwd.value;
+	if (usr=="" || pwd=="" )
+		alert("Fields cannot be blank");
+	else
+	  	document.loginform.submit();
+		
+	}catch(ex){
+		alert(ex.message);
+	}
+ }
+</script>
+<body>
+   <form name="loginform" action="http://localhost:8080/login" method="post" >
+     <table>
+	   <tr>
+		<td> User Name</td>
+		<td> <input name=username /></td>
+	   </tr>
+	   <tr>
+		<td> Password</td>
+		<td> <input type=password name=pwd  /></td>
+	   </tr>
+	   <tr>
+		<td> <input type=button name=reg value="Login" onClick="validate()" /></td>
+		<td> &nbsp;</td>
+	   </tr>
+	</table>
+  </form>
+<a href="userregistration.html"> Register</a>
+</html>
+
+
