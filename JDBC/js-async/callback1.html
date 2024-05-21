@@ -1,0 +1,27 @@
+<html>
+<div id="demo1">
+	Call back fn1 output will come here.
+</div>
+<div id="demo2">
+	Call back fn2 output will come here.
+</div>
+<script>
+
+function displayValue1(value) {
+     document.getElementById("demo1").innerHTML = value;
+}
+
+function displayValue2(value) {
+     document.getElementById("demo2").innerHTML = value;
+}
+
+function calculate(num1, num2, pointer) {
+      let sum = num1 + num2;
+      pointer(sum);
+}
+
+calculate(534, 225, displayValue1);
+calculate(534, 225, displayValue2);
+
+</script>
+</html>

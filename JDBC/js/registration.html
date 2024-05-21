@@ -1,0 +1,69 @@
+<html>
+<body>
+<script>
+	function validate(){
+		//define variables
+		let un,nm,ag,em,pw,cp;
+	try{
+
+		//access form fields
+		un=document.getElementById("uname");
+		nm=un.value;
+		ag=document.frmreg.age.value;
+		em=document.frmreg.email.value;
+		pw=document.frmreg.pwd.value;
+		cp=document.frmreg.cpwd.value;
+
+	
+		if (nm=="" || ag=="" || em=="" || pw=="" || cp=="" )
+			alert("Field cannot be blank");
+		else{
+
+			if (ag > 100 || ag < 1){
+				alert("Age is not realstic");
+			}else{
+				if (pw!=cp){
+					alert(" pwd & confirm must be same");
+				}else{	
+					document.frmreg.submit();
+				}
+			}
+		}
+	   }catch(err){
+			alert(err.message);
+		}
+
+	}
+</script>
+
+<form name="frmreg" >
+
+<Table>
+	<TR>
+		<Td> Name </TD>
+		<Td><input name="name" id="uname" /></TD>
+	</TR>
+	<TR>
+		<TD> Age </TD>
+		<Td><input name="age" /></TD>
+	</TR>
+	<TR>
+		<TD> Email </TD>
+		<Td><input name="email" /></TD>
+	</TR>
+	<TR>
+		<TD> Password </TD>
+		<Td><input name="pwd" /></TD>
+	</TR>
+	<TR>
+		<TD> Confirm </TD>
+		<Td><input name="cpwd" /></TD>
+	</TR>
+	<TR>
+		<TD> <input type="Button" value="Register" onClick=validate() /></TD>
+		<Td><input type="Reset" value="Clear"/></TD>
+	</TR>
+</table>
+</form>
+</body>
+</html>

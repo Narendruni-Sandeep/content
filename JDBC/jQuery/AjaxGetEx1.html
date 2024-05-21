@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Get demo</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    // Attach a submit handler to the form
+    $( "#userForm" ).submit(function( event ) {
+ 
+       // Stop form from submitting normally
+       event.preventDefault();
+ 
+      // Get some values from elements on the page:
+      var $form = $( this ),
+      username = $form.find( "input[name='username']" ).val(),
+      url = "https://api.github.com/users/"+username+"/repos";
+ 
+      // Send the data using get
+      $.get(url, function(response){
+         //if request if made successfully then the response represents the data
+         $( "#result" ).empty().append(response);
+      });
+    });
+  </script>
+
+  <form id="userForm">
+    Enter gitHub User name: <input type="text" name="username" >
+    <input type="submit" value="Search">
+  </form>
+
+  <!-- the result of the search will be rendered inside this div -->
+  <div id="result"> vhgvgjhkvggh  </div>
+
+</body>
+</html>

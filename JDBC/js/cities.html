@@ -1,0 +1,26 @@
+<div id="ctout"> api call output will be displayed here</div>
+
+<script>
+
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		//console.log(this.responseText);
+
+		let ctd=document.getElementById("ctout");
+
+		ctd.innerHTML=this.responseText;
+	}
+});
+
+xhr.open("GET", "https://wft-geo-db.p.rapidapi.com/v1/geo/cities");
+xhr.setRequestHeader("X-RapidAPI-Key", "c7456f7687mshb5c0c3b1b0ef96fp169cd0jsn5d3c74c96320");
+xhr.setRequestHeader("X-RapidAPI-Host", "wft-geo-db.p.rapidapi.com");
+
+xhr.send(data);
+
+</script>

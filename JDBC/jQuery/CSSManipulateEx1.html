@@ -1,0 +1,41 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+		
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+            $("li").eq(1).css("color", "red");
+	    //multiple css properties at a time
+            $("li").eq(2).css({"color":"red", "background-color":"green"});
+	    //setting width & height
+	    $("div:first").width(100);
+            $("div:first").css("background-color", "red");
+    	    $("div:first").height(100);
+	    $("div:second").width(100);
+	    $("div:second").css("background-color","green");
+	    $("div:second").height(200);
+
+         });
+      </script>
+   </head>
+	
+   <body>
+         <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+            <li>list item 4</li>
+            <li>list item 5</li>
+            <li>list item 6</li>
+         </ul>
+      <div>N</div>
+      <div>K</div>
+      <div>X</div>
+      <div>G</div>
+      <div>E</div>
+      <div>N</div>
+   </body>
+</html>

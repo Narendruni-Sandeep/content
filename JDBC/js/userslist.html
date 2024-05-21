@@ -1,0 +1,71 @@
+<H2> Users List </H2>
+<table id="usrtable" border="2">
+	<tr>
+			<th> Full Name	</th>
+			<th> Email	</th>	
+			<th> Avatar	</th>			
+	</tr>
+</table>
+
+<script>
+let users;
+const xhr = new XMLHttpRequest();
+//xhr.withCredentials = true;
+
+//making an ajax call
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		
+		//parsing json output
+		users=JSON.parse(this.responseText);
+
+		//printing json oboutput to console
+		console.table(users.data);
+
+		//get the ref of html table
+		let ut=document.getElementById("usrtable");
+
+		//iterating through the users list
+		for (let usr of users.data) {
+
+			//printing one user data
+		   console.table(usr);
+
+			//create the row dynamically
+		   const row = document.createElement("tr");
+
+			//create the first cell i.e name
+			const cell1 = document.createElement("td");
+      		const cell1Text = document.createTextNode(usr.first_name + usr.last_name);
+      		cell1.appendChild(cell1Text);
+      		row.appendChild(cell1);
+
+
+			//create second cell i.e for email
+			const cell2 = document.createElement("td");
+      		const cell2Text = document.createTextNode(usr.email);
+      		cell2.appendChild(cell2Text);
+      		row.appendChild(cell2);
+
+			//create second cell i.e for avatar
+      		const cell3 = document.createElement("td");
+  			var av = document.createElement("IMG");
+           av.setAttribute("src", usr.avatar);
+           av.setAttribute("height", "100");
+           av.setAttribute("width", "200");
+           av.setAttribute("alt", "Avatar");
+      		cell3.appendChild(av);
+      		row.appendChild(cell3);
+	
+			//adding the row to the table
+			ut.appendChild(row);
+		}
+	}
+  });
+
+xhr.open("GET", "https://reqres.in/api/users?page=2");
+xhr.send();
+</script>
+
+
+

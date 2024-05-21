@@ -1,0 +1,21 @@
+<html>
+<script>
+const url = 'https://reqres.in/api/users';
+
+const params = {
+  name:"sreedhar"	,
+  job:"md"
+}
+const response = fetch('url', {
+  method: 'POST',
+  crossorigin:true,
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(params)
+});
+
+const data = JSON.parse(response.data);
+console.table(data);
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+<script>  
+$(document).ready(function(){
+    $("h1,h2,h3").hover(function(){  
+           $(this).css("background-color", "violet");  
+        }, function(){  
+           $(this).css("background-color", "green");  
+    });  
+});  
+</script>  
+</head>  
+<body>  
+<p>Hover your mouse pointer on me!</p> 
+<h1>This heading will disappear if you click on this.</h1>  
+<h2>I will also disappear.</h2>  
+<h3>Me too.</h3>   
+</body>  
+</html> 

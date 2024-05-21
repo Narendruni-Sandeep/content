@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Get demo</title>
+<script type="text/javascript" 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+</head>
+<body>
+ 
+<script>
+
+$.ajax({url: "https://reqres.in/api/users?page=2"})
+    .done(function(data,textStatus, jqXHR){
+    //code to handle data from webservice here.	
+	console.log(data);
+	})
+
+    .fail(function(jqXHR, textStatus, err){
+        //code to handle error here.
+	console.log(err.message);
+	})
+    .always(function(data|| jqXHR, textStatus, jqXHR||errorThrown){
+        //this code will always execute regardless
+       console.log('alwyas');
+	})
+</script>
+</body>
+</html>
