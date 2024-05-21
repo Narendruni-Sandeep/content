@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+      fieldset {
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+fieldset legend {
+    background: #1F497D;
+    color: #fff;
+    padding: 5px 10px ;
+    font-size: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-left: 20px;
+}
+      </style>
+</head>
+<body style="background-color:powderblue;">
+<form action="Emp_Add">
+<section style="margin: 10px;">
+     <fieldset style="border-radius: 5px; padding: 5px; min-height:150px;">
+     <legend>Enter employee details to add:</legend>
+<label for="empno">employee id:</label>
+<input type="text" name="empno" required="required"><br>
+<label for="ename">employee name:</label>
+<input type="text" name="ename" required="required"><br>
+<label for="job">job</label>
+<input type="text" name="job" required="required"><br>
+<label for="mgr">manager id:</label>
+<input type="text" name="mgr" required="required"><br>
+<label for="hdate">hire date:</label>
+<input type="date" name="hdate"><br>
+<label for="sal">salary:</label>
+<input type="text" name="sal" required="required"><br>
+<label for="comm">commission:</label>
+<input type="text" name="comm" required="required"><br>
+<label for="deptno">department no:</label>
+<input type="text" name="deptno" required="required"><br>
+<button type="submit"  value="Submit">Submit</button>
+</fieldset>
+</form>
+<form action="Emp_Crud.html">
+    <input type="submit" value="Go back" />
+</form>
+</body>
+</html>

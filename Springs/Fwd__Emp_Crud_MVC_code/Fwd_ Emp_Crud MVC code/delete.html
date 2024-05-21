@@ -1,0 +1,25 @@
+<html>
+<body>
+<script type="text/javascript">
+<p id="demo">Let AJAX change this text.</p>
+function deleterec() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "Emp_Delete", true);
+  xhttp.send();
+	}
+</script>
+<form action="Emp_Delete">
+<label for="empno">Enter the employee id to delete:</label>
+<input type="text" name="empno"><br><br>
+<button type="submit" onclick="deleterec()">submit</button></br>
+</form>
+<form action="Emp_Crud.html">
+    <input type="submit" value="Go back" />
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+      fieldset {
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+fieldset legend {
+    background: #1F497D;
+    color: #fff;
+    padding: 5px 10px ;
+    font-size: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-left: 20px;
+}
+      </style>
+</head>
+<body style="background-color:powderblue;">
+<section style="margin: 10px;">
+     <fieldset style="border-radius: 5px; padding: 5px; min-height:150px;">
+     <legend>Enter employee id to search:</legend>
+<form action="http://localhost:8089/Emp_CRUD/Emp_Search">
+<label for="empno">Enter the employee id to search:</label>
+<input type="text" name="empno" required="required"><br><br>
+<button type="submit"  value="Submit">Submit</button>
+</fieldset>
+</form>
+<form action="Emp_Crud.html">
+    <input type="submit" value="Go back" />
+</form>
+</body>
+
+</html>
